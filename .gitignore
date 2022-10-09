@@ -1,0 +1,15 @@
+.idea/
+.DS_Store
+awsglue/
+
+plugins.zip
+poetry.lock
+PyGlue.zip
+
+logs/*
+!logs/
+
+/infra/*/.terraform.lock.hcl
+/infra/*/.terraform/
+
+*/__pycache__/

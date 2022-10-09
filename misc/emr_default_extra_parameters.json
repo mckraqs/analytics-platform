@@ -1,0 +1,28 @@
+{   "Name": "default_emr_job_name",
+    "LogUri": "s3://mpolakowski-showcase-ap-airflow-prod",
+    "ReleaseLabel": "emr-4.6.0",
+    "Instances": {
+        "InstanceGroups": [
+            {
+                "Name": "Master nodes",
+                "InstanceRole": "MASTER",
+                "InstanceType": "r3.2xlarge",
+                "InstanceCount": 1
+            },
+            {
+                "Name": "Core nodes",
+                "InstanceRole": "CORE",
+                "InstanceType": "r3.2xlarge",
+                "InstanceCount": 1
+            }
+        ],
+        "TerminationProtected": false,
+        "KeepJobFlowAliveWhenNoSteps": false
+    },
+    "Applications":[
+        { "Name": "Spark" }
+    ],
+    "VisibleToAllUsers": true,
+    "JobFlowRole": "emr_ec2_instance_profile",
+    "ServiceRole": "ap-role-emr-prod"
+}
